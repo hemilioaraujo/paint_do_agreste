@@ -2,10 +2,12 @@
 
 /*
 ======== OpenGL ==================
-Nairon Neri Silva
-Vers�o 1.0
-Programa exemplo de funcionalidade do
-mouse e teclado
+GRUPO:
+    Hemílio, Matheus Barbosa, Vitor Bastos
+Versao:
+    1.0
+Aplicação:
+    Paint do Agrest
 ========================================
 */
 
@@ -22,8 +24,7 @@ int pontos[2][3];
 int contador_de_pontos = 0;
 
 // Fun��o callback para desenho
-void desenha(void)
-{
+void desenha(void){
     // Inicializa o sistema de coordenadas
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -66,7 +67,7 @@ void desenha(void)
     
 
     // glutPostRedisplay();
-
+    
 	//Habilita a execu��o de comandos OpenGL
 	glFlush();
 }
@@ -75,49 +76,47 @@ void desenha(void)
 
 
 // Keyboard callback
-void keyboard(unsigned char key, int x, int y)
-{
-   switch(key)
-   {
+void keyboard(unsigned char key, int x, int y){
+   switch(key){
         case 27:
             exit(0);
             break;
-        case 'e':
-            
+        case '1':
+            r=255, g=0, b=0;
             break;
-        case 'R':
-            if (r!=255){r+=1;}
-        break;
+        case '2':
+            r=0, g=255, b=0;
+            break;
+        case '3':
+            r=0, g=0, b=255;
+            break;
+        case '4':
+            r=0, g=0, b=0;
+            break;
+        case '5':
+            r=255, g=255, b=0;
+            break;
+        case '6':
+            r=255, g=0, b=255;
+            break;
+        case '7':
+            r=255, g=165, b=0;
+            break;
+        case '8':
+            r=128, g=128, b=128;
+            break;
+        case '9':
+            r=75, g=54, b=33;
+            break;
+    }
 
-        case 'r':
-            if (r!=0){r-=1;}
-        break;
-
-        case 'G':
-            if (g!=255){g+=1;}
-        break;
-
-        case 'g':
-            if (g!=0){g-=1;}
-        break;
-
-        case 'B':
-            if (b!=255){b+=1;}
-        break;
-
-        case 'b':
-            if (b!=0){b-=1;}
-        break;
-   }
    printf("Cores: RGB (%d,%d,%d)\n",r,g,b);
    glutPostRedisplay();
 }
 
 
-void specialKeys(int key, int x, int y)
-{
-   switch(key)
-   {
+void specialKeys(int key, int x, int y){
+   switch(key){
       case GLUT_KEY_UP:
          //seta para cima
          printf("Seta para cima pressionada\n");
@@ -173,20 +172,20 @@ y = windowSizeY - y;
             printf("x: %d\ny: %d\n\n", x, y);
         }
     }
+    // glutDisplayFunc(desenha);
     glutPostRedisplay();
 }
 
 
 //Inicializa par�metros
-void init (void)
-{
+void init (void){
     // Configura a cor de fundo como preta
+    // glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
 //Principal
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv){
     glutInit(&argc, argv);
     //Tipo de janela (single-buffered) e cores utilizados
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
