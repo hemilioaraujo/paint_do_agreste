@@ -23,6 +23,7 @@ int windowSizeY = 600;
 int pontos[2][2];
 int contador_de_pontos = 0;
 int espessura_da_linha = 0;
+int tamanho_do_ponto = 1;
 
 // PROTOTIPOS
 void init(void);
@@ -42,7 +43,7 @@ void desenha(void){
 
     // glColor3ub(r, g, b);
 
-    glPointSize(5);
+    glPointSize(tamanho_do_ponto);
     glLineWidth(espessura_da_linha);
 
     switch (contador_de_pontos-1){
@@ -76,8 +77,6 @@ void desenha(void){
 }
 
 
-
-
 // Keyboard callback
 void keyboard(unsigned char key, int x, int y){
    switch(key){
@@ -90,12 +89,12 @@ void keyboard(unsigned char key, int x, int y){
             break;
         case '+':
             espessura_da_linha++;
-            printf("Espessura: %d", espessura_da_linha);
+            // printf("Espessura: %d", espessura_da_linha);
             break;
         case '-':
             if (espessura_da_linha > 0){
                 espessura_da_linha--;
-                printf("Espessura: %d", espessura_da_linha);
+                // printf("Espessura: %d", espessura_da_linha);
             }
             break;   
         case '1':
