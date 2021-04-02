@@ -17,7 +17,7 @@ Aplicação:
 #include <stdio.h>
 
 
-int r=255,g=255,b=255;
+int r=0,g=0,b=0;
 int windowSizeX = 600;
 int windowSizeY = 600;
 int pontos[2][3];
