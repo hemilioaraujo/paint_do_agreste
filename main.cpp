@@ -180,8 +180,8 @@ y = windowSizeY - y;
 //Inicializa par�metros
 void init (void){
     // Configura a cor de fundo como preta
-    // glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    // glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
 //Principal
