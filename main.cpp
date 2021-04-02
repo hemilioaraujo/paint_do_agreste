@@ -34,7 +34,7 @@ void desenha(void){
     gluOrtho2D (0.0f, windowSizeX, 0.0f, windowSizeY);
 
 	//Limpa todos os pixels com a cor de fundo
-	glClear(GL_COLOR_BUFFER_BIT);
+	// glClear(GL_COLOR_BUFFER_BIT);
 
     glColor3ub(r, g, b);
 
@@ -181,7 +181,8 @@ y = windowSizeY - y;
 void init (void){
     // Configura a cor de fundo como preta
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-    // glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    //Limpa todos os pixels com a cor de fundo
+    glClear(GL_COLOR_BUFFER_BIT);
 }
 
 //Principal
